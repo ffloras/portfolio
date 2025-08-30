@@ -2,10 +2,17 @@ import { useEffect, useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { MdNavigateBefore } from "react-icons/md";
 
+type VideoType = {
+  src: string;
+  caption: string;
+};
+
 export type VideoScrollerType = {
-  videos: string[];
-  width?: number;
-  height?: number;
+  videos: VideoType[];
+  width: number;
+  widthSmall: number;
+  height: number;
+  heightSmall: number;
 };
 
 const delay = (ms: number) =>
@@ -13,10 +20,17 @@ const delay = (ms: number) =>
     setTimeout(resolve, ms);
   });
 
-const VideoScroller = ({ videos, width, height }: VideoScrollerType) => {
+const VideoScroller = ({
+  videos,
+  width,
+  height,
+  widthSmall,
+  heightSmall,
+}: VideoScrollerType) => {
   const [videoIndex, setVideoIndex] = useState<number>(0);
   const [inTransition, setInTransition] = useState<boolean>(false);
-  const videoWidth = width ? width : 300;
+  const [isMidScreen, setIsMidScreen] = useState(window.innerWidth < 900);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 650);
 
   const handleChangeVideo = async (direction: "left" | "right") => {
     setInTransition(true);
@@ -32,35 +46,78 @@ const VideoScroller = ({ videos, width, height }: VideoScrollerType) => {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMidScreen(window.innerWidth < 900);
+      setIsSmallScreen(window.innerWidth < 650);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="project-video-outer-container">
-      <div
-        className="project-video-arrow"
-        onClick={() => handleChangeVideo("left")}
-      >
-        <MdNavigateBefore size={80} color="#7d7d7dff" />
-      </div>
+      {!isMidScreen && (
+        <div
+          className="project-video-arrow"
+          onClick={() => handleChangeVideo("left")}
+        >
+          <MdNavigateBefore size={80} color="#7d7d7dff" />
+        </div>
+      )}
       <div className="project-video-inner-container">
         <div
+          className="project-video-caption-container"
+          style={{
+            opacity: inTransition ? 0 : 1,
+          }}
+        >
+          {isMidScreen && (
+            <div
+              className="project-video-arrow"
+              onClick={() => handleChangeVideo("left")}
+            >
+              <MdNavigateBefore size={50} color="#7d7d7dff" />
+            </div>
+          )}
+          <p className="project-video-caption">{videos[videoIndex].caption}</p>
+          {isMidScreen && (
+            <div
+              className="project-video-arrow"
+              onClick={() => handleChangeVideo("right")}
+            >
+              <MdNavigateNext size={50} color="#7d7d7dff" />
+            </div>
+          )}
+        </div>
+        <div
           className="project-video-transition"
-          style={{ opacity: inTransition ? 1 : 0, width: `${videoWidth}px` }}
+          style={{
+            opacity: inTransition ? 1 : 0,
+            width: `${isSmallScreen ? widthSmall : width}px`,
+          }}
         ></div>
+
         <video
           className="project-video"
-          src={videos[videoIndex]}
-          width={videoWidth}
+          src={videos[videoIndex].src}
+          width={isSmallScreen ? widthSmall : width}
+          height={isSmallScreen ? heightSmall : height}
           controls
+          tabIndex={-1}
         />
       </div>
-      <div
-        className="project-video-arrow"
-        onClick={() => handleChangeVideo("right")}
-      >
-        <MdNavigateNext size={80} color="#7d7d7dff" />
-      </div>
+      {!isMidScreen && (
+        <div
+          className="project-video-arrow"
+          onClick={() => handleChangeVideo("right")}
+        >
+          <MdNavigateNext size={80} color="#7d7d7dff" />
+        </div>
+      )}
     </div>
   );
 };

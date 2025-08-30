@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import MyPetPlant from "./pages/MyPetPlant";
 import RiskMapper from "./pages/RiskMapper";
 import TheEscape from "./pages/TheEscape";
+import PawsAndHomes from "./pages/PawsAndHomes";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/MyPetPlant" element={<MyPetPlant />} />
         <Route path="/RiskMapper" element={<RiskMapper />} />
         <Route path="/theEscape" element={<TheEscape />} />
+        <Route path="/PawsAndHomes" element={<PawsAndHomes />} />
       </Routes>
     </Router>
   );
