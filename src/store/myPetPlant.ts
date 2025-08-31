@@ -1,5 +1,6 @@
 import myPetPlantImg from "../assets/myPetPlant/myPetPlantBg.png";
 import myPetPlantVid1 from "../assets/myPetPlant/myPetPlantVid1.mp4";
+import myPetPlantVid2 from "../assets/myPetPlant/myPetPlantVid2.mp4";
 import { type VideoScrollerType } from "../components/VideoScroller";
 import { type ProjectsPageType } from "./projects";
 
@@ -24,9 +25,13 @@ export const plantVideos: VideoScrollerType = {
       src: myPetPlantVid1,
       caption: "Add a new plant and set its watering schedule",
     },
+    {
+      src: myPetPlantVid2,
+      caption: "Receive notification reminders to water your plants",
+    },
   ],
-  width: 300,
+  width: 250,
   widthSmall: 300,
-  height: 670,
+  height: 450,
   heightSmall: 670,
 };

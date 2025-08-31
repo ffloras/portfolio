@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useRef } from "react";
 import NavBar from "../components/NavBar";
-import { useNavigate } from "react-router-dom";
 import Projects from "../sections/Projects";
+import About from "../sections/About";
+import Contact from "../sections/Contact";
+import Footer from "../components/Footer";
 
 export type NavItemType = {
   name: string;
@@ -10,7 +12,6 @@ export type NavItemType = {
 };
 
 const Home = () => {
-  const navigate = useNavigate();
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -32,18 +33,16 @@ const Home = () => {
   return (
     <>
       <NavBar items={navItems} />
-      <section id="about" className="about-container" ref={aboutRef}>
-        About Me
+      <section id="about" className="about-me-container" ref={aboutRef}>
+        <About />
       </section>
       <section id="projects" className="projects-container" ref={projectRef}>
         <Projects />
       </section>
-      <section id="contact" className="contact" ref={contactRef}>
-        My Contact
+      <section id="contact" className="contacts-container" ref={contactRef}>
+        <Contact />
       </section>
-      <button onClick={() => navigate("/MyPetPlant")}>
-        Go to my pet plant
-      </button>
+      <Footer />
     </>
   );
 };

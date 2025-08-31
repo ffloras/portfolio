@@ -54,10 +54,6 @@ const VideoScroller = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="project-video-outer-container">
       {!isMidScreen && (
