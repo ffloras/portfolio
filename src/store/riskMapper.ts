@@ -11,10 +11,9 @@ export const RiskMapperInfo: ProjectsPageType = {
   title: "Risk Mapper",
   projectType: "BCIT Projects 2",
   descriptions: [
-    `RiskMapper is a climate risk visualization web application that enables users to identify, understand, and share information 
-  about environmental threats in their region. Using real-time geospatial data from official sources, the app visualizes environmental risks 
-  through interactive map layers and provides actionable climate adaptation tips.`,
-    `This app is built using Node JS and express, with EJS, JavaScript and CSS, and a MongoDB database.`,
+    `Risk Mapper is a web application created using Javascript and EJS that shows users the climate risks in their area.
+    It uses Mapbox and MscGeomet API to implement a map with visual overlay of climate data, as well as Weather API
+    to detect climate alerts. Backend and session-based authentication was implemented using Node JS and Express with a MongoDB database.`,
   ],
   link: "https://riskmapper.onrender.com/",
   github: "https://github.com/ffloras/2800-202510-BBY01",

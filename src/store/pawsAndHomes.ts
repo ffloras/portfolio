@@ -11,13 +11,13 @@ export const PawsAndHomesInfo: ProjectsPageType = {
   title: "Paws and Homes",
   projectType: "BCIT Projects 1",
   descriptions: [
-    `Paws and Homes is a web app that connects pet owners needing to rehome their pets with
+    `Paws and Homes is a web application built using JavaScript, HTML and CSS that connects pet owners needing to rehome their pets with
   those interested in adopting.`,
-    `This app was built using HTML, JavaScript and CSS. Authentication and database was implemented using
-  Google Firebase and Firestore`,
+    `Google Firebase was used for user authentication along with Firestore database, allowing users to create and save their own profiles,
+    and browse other users' pet profiles`,
   ],
   link: "https://team26-paws-and-homes.web.app/",
-  github: "https://github.com/ffloras/2800-202510-BBY01",
+  github: "https://github.com/ffloras/1800_202510_BBY26",
 };
 
 export const pawsAndHomesVideos: VideoScrollerType = {

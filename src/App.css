@@ -10,7 +10,7 @@ highlight: #c77612ff
 /* navbar */
 nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -27,9 +27,9 @@ nav {
   outline: none;
   box-shadow: none;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #9a6626ff;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .nav-link-button:hover {
@@ -41,6 +41,7 @@ h1 {
   font-size: 3rem;
   margin: 0 auto;
   text-align: center;
+  font-family: "Source Serif 4", serif;
 }
 
 /* footer */
@@ -92,7 +93,7 @@ h1 {
   background-color: #ffffffff;
   margin: 0;
   height: 85vh;
-  padding: 0 100px 0 100px;
+  padding: 70px 100px 0 100px;
 }
 
 .about-text-container {
@@ -204,7 +205,7 @@ h1 {
 
 .project-page-header {
   display: flex;
-  padding: 50px 0 50px 0;
+  padding: 100px 0 50px 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -295,7 +296,7 @@ h1 {
 .project-video-transition {
   position: absolute;
   height: 100%;
-  background-color: #eae2d8ff;
+  background-color: #e3e3e3ff;
   z-index: 5;
   transition: opacity 300ms;
   pointer-events: none;
@@ -324,7 +325,7 @@ h1 {
   .about-container {
     flex-direction: column;
     justify-content: flex-start;
-    padding-bottom: 50px;
+    padding: 100px 0 50px 0;
   }
 
   .about-text-container {
@@ -334,6 +335,10 @@ h1 {
   .contacts-container {
     flex-direction: column;
     gap: 50px;
+  }
+
+  .projects-container {
+    padding-top: 50px;
   }
 
   .project-list-container {
@@ -375,7 +380,7 @@ h1 {
 
 @media (max-width: 650px) {
   .about-container {
-    padding: 0 50px 50px 50px;
+    padding: 100px 50px 80px 50px;
   }
 
   .about-text-container {

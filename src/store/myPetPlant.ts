@@ -12,9 +12,9 @@ export const MyPlantPlantInfo: ProjectsPageType = {
   descriptions: [
     `My Pet Plant is an android mobile app created using React Native with Expo and Typescript that helps users 
     keep track of their plant watering schedule. Users will also receive notification reminders when it's time to 
-    water their plants.`,
-    `(This app is currently in internal testing phase for Google Play Store. If you are interested
-    in joining, please send an email (including your gmail) to fsu8@my.bcit.ca.)`,
+    water their plants. Zustand and Async Storage was used for state management and storing users' plant data in phone storage.`,
+    `This app is currently in internal testing phase for Google Play Store. If you are interested
+    in joining, please send an email (gmail required) to fsu8@my.bcit.ca.`,
   ],
   github: "https://github.com/ffloras/myPetPlant",
 };
@@ -31,7 +31,7 @@ export const plantVideos: VideoScrollerType = {
     },
   ],
   width: 250,
-  widthSmall: 300,
+  widthSmall: 250,
   height: 450,
-  heightSmall: 670,
+  heightSmall: 450,
 };
