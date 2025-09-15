@@ -1,6 +1,7 @@
 import myPetPlantImg from "../assets/myPetPlant/myPetPlantBg.png";
 import myPetPlantVid1 from "../assets/myPetPlant/myPetPlantVid1.mp4";
 import myPetPlantVid2 from "../assets/myPetPlant/myPetPlantVid2.mp4";
+import myPetPlantVid3 from "../assets/myPetPlant/MyPetPlantVid3.mp4";
 import { type VideoScrollerType } from "../components/VideoScroller";
 import { type ProjectsPageType } from "./projects";
 
@@ -28,6 +29,10 @@ export const plantVideos: VideoScrollerType = {
     {
       src: myPetPlantVid2,
       caption: "Receive notification reminders to water your plants",
+    },
+    {
+      src: myPetPlantVid3,
+      caption: "Edit your plant's info or delete a plant",
     },
   ],
   width: 250,

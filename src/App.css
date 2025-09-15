@@ -27,9 +27,10 @@ nav {
   outline: none;
   box-shadow: none;
   cursor: pointer;
-  font-size: 1.15rem;
+  font-size: 1.8rem;
   color: #9a6626ff;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: "Alumni Sans", sans-serif;
 }
 
 .nav-link-button:hover {
@@ -38,10 +39,12 @@ nav {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: bold;
   margin: 0 auto;
   text-align: center;
-  font-family: "Source Serif 4", serif;
+  font-family: "Alumni Sans", sans-serif;
+  font-weight: 300;
 }
 
 /* footer */
@@ -55,9 +58,10 @@ h1 {
 
 .footer-name {
   color: #9a6626ff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 14px 0 14px 0;
+  font-size: 2rem;
+  font-family: "Alumni Sans", sans-serif;
+  font-weight: 300;
+  margin: 5px 0 5px 0;
 }
 
 .footer-link-container {
@@ -111,7 +115,7 @@ h1 {
 }
 
 .project-list-container {
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 5rem 2rem 2rem 2rem;
   max-width: 1040px;
   margin: 0 auto;
   display: flex;
@@ -120,7 +124,7 @@ h1 {
   flex-wrap: wrap;
   border: 4px solid #9a6626ff;
   border-radius: 12px;
-  margin-top: -30px;
+  margin-top: -50px;
 }
 
 .projects-list-heading {
@@ -172,7 +176,7 @@ h1 {
 .contacts-container {
   padding: 80px 0 150px 0;
   display: flex;
-  gap: 400px;
+  gap: 100px;
   justify-content: center;
   align-items: center;
 }
@@ -314,10 +318,6 @@ h1 {
   .project-list-container {
     max-width: 700px;
     margin: -30px 30px 0 30px;
-  }
-
-  .contacts-container {
-    gap: 300px;
   }
 }
 
